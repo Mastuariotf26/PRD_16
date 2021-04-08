@@ -1,0 +1,136 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(int _argv, char **_argc) {
+    char jenis_kapal[100];
+    char tujuan[100];
+    char muatan[100];
+    char nama[100];
+    char jenis_kelamin[100];
+    char usia[100];
+    int total_manusia=0, total_sepedaMotor=0, total_mobil=0;
+
+    //tomok, ambarita, nainggolan
+    printf("Selamat datang di Program Kelompok 16\nSilahkan masukkan tujuan anda!\n");
+    scanf("%s", tujuan);
+    
+    while(tujuan != "---" ){
+        if(strcmp(tujuan, "tomok")==0){
+            printf("Untuk tujuan ke Tomok, anda dapat menaiki jenis Kapal Motor\n");
+
+            do{
+                printf("Silahkan pilih Jenis Muatan anda!\n");
+                scanf("%s", muatan);
+                if(strcmp(muatan, "manusia")==0){
+                    if(total_manusia<=100){
+                        printf("Selamat Datang di Menu Registrasi!\n");
+                        printf("Silahkan masukkan Nama Anda!\n");
+                        scanf("%s", nama);
+                        printf("Silahkan masukkan Jenis Kelamin Anda!\n");
+                        scanf("%s", jenis_kelamin);
+                        printf("Silahkan masukkan Usia Anda!\n");
+                        scanf("%s", usia);
+                        total_manusia = total_manusia + 1;
+                    }else if(total_manusia>100){
+                        printf("Maaf, Total Manusia pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(muatan, "sepedamotor")==0){
+                    if(total_sepedaMotor<=40){
+                        total_sepedaMotor = total_sepedaMotor + 1;
+                    }else if(total_sepedaMotor>40){
+                    printf("Maaf, Total Sepeda Motor pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(muatan, "mobil")==0){
+                    printf("Maaf, kapal ini tidak mengangkut Mobil\n");
+                    break;
+                }else if(strcmp(muatan, "---")==0){
+                    printf("Total Manusia = %d | Total Sepeda Motor = %d | Total Mobil = -\n", total_manusia, total_sepedaMotor);
+                    break;
+                }else{
+                    printf("Jenis Muatan tidak valid\n");
+                }
+            }while(strcmp(muatan, "manusia")==0 || strcmp(muatan, "sepedamotor")==0 || strcmp(muatan, "mobil")==0 );
+            
+        }else if(strcmp(tujuan, "ambarita")==0){
+            printf("Untuk tujuan ke Ambarita, anda dapat menaiki jenis Kapal Ihan Batak\n");
+            do{
+                printf("Silahkan pilih Jenis Muatan anda!\n");
+                scanf("%s", muatan);
+                if(strcmp(muatan, "manusia")==0){
+                    if(total_manusia<=250){
+                        printf("Selamat Datang di Menu Registrasi!\n");
+                        printf("Silahkan masukkan Nama Anda!\n");
+                        scanf("%s", nama);
+                        printf("Silahkan masukkan Jenis Kelamin Anda!\n");
+                        scanf("%s", jenis_kelamin);
+                        printf("Silahkan masukkan Usia Anda!\n");
+                        scanf("%s", usia);
+                        total_manusia = total_manusia + 1;
+                    }else if(total_manusia>250){
+                        printf("Maaf, Total Manusia pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(muatan, "sepedamotor")==0){
+                    if(total_sepedaMotor<=50){
+                        total_sepedaMotor = total_sepedaMotor + 1;
+                    }else if(total_sepedaMotor>50){
+                        printf("Maaf, Total Sepeda Motor pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }   
+                }else if(strcmp(muatan, "mobil")==0){
+                    if(total_mobil<=30){
+                        total_mobil = total_mobil + 1;
+                    }else if(total_mobil>30){
+                        printf("Maaf, Total Mobil pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(muatan, "---")==0){
+                    printf("Total Manusia = %d | Total Sepeda Motor = %d | Total Mobil = %d\n", total_manusia, total_sepedaMotor, total_mobil);
+                }else{
+                    printf("Jenis Muatan tidak valid\n");
+                }
+            }while(strcmp(muatan, "manusia")==0 || strcmp(muatan, "sepedamotor")==0 || strcmp(muatan, "mobil")==0);
+            
+        }else if(strcmp(tujuan, "nainggolan")==0){
+            printf("Untuk tujuan ke Nainggolan, anda dapat menaiki jenis Ferry\n");
+            do{
+                printf("Silahkan pilih Jenis Muatan anda!\n");
+                scanf("%s", muatan);
+                if(strcmp(muatan, "manusia")==0){
+                    if(total_manusia<=300){
+                        printf("Selamat Datang di Menu Registrasi!\n");
+                        printf("Silahkan masukkan Nama Anda!\n");
+                        scanf("%s", nama);
+                        printf("Silahkan masukkan Jenis Kelamin Anda!\n");
+                        scanf("%s", jenis_kelamin);
+                        printf("Silahkan masukkan Usia Anda!\n");
+                        scanf("%s", usia);
+                        total_manusia = total_manusia + 1;
+                    }else if(total_manusia>300){
+                        printf("Maaf, Total Manusia pada Kapal ini s udah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(muatan, "sepedamotor")==0){
+                    if(total_sepedaMotor<=150){
+                        total_sepedaMotor = total_sepedaMotor + 1;
+                    }else if(total_sepedaMotor>150){
+                        printf("Maaf, Total Sepeda Motor pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(muatan, "mobil")==0){
+                    if(total_mobil<=60){
+                        total_mobil = total_mobil + 1;
+                    }else if(total_mobil>60){
+                        printf("Maaf, Total Mobil pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(muatan, "---")==0){
+                    printf("Total Manusia = %d | Total Sepeda Motor = %d | Total Mobil = %d\n", total_manusia, total_sepedaMotor, total_mobil);
+                }else{
+                    printf("Jenis Muatan tidak valid\n");
+                }
+            }while(strcmp(muatan, "manusia")==0 || strcmp(muatan, "sepedamotor")==0 || strcmp(muatan, "mobil")==0);
+
+        }else{
+            printf("Maaf, Tujuan yang anda masukkan belum tersedia pada layanan kami.\n");
+            break;
+        }
+    }
+
+    return 0;
+    }
+    
