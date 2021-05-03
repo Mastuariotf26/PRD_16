@@ -1,0 +1,146 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(int _argv, char **_argc) {
+    char jenis_kapal[100];
+    char tujuan[100];
+    char Barang[100];
+    char nama[100];
+    char jenis_kelamin[100];
+    char usia[100];
+    int total_manusia=0, total_sepedaMotor=0, total_mobil=0;
+    int ongkos_tomok;
+    int ongkos_ambarita;
+    int ongkos_nainggolan;
+    //Tujuan tomok, ambarita, nainggolan
+    printf("Selamat datang di Program Kelompok 16\nSilahkan masukkan tujuan anda!\n");
+    scanf("%s", tujuan);
+    
+    int i;
+    for(i=0;i<300;i++){
+        if (tujuan != "---" )
+        if(strcmp(tujuan, "tomok")==0){
+            printf("Untuk tujuan ke Tomok, anda dapat menaiki jenis Kapal Motor\n");
+
+            do{         
+                printf("Selamat Datang di Menu Registrasi!\n");
+                printf("Silahkan masukkan Nama Anda!\n");
+                scanf("%s", nama);
+                printf("Silahkan masukkan Jenis Kelamin Anda!\n");
+                scanf("%s", jenis_kelamin);
+                printf("Silahkan masukkan Usia Anda!\n");
+                scanf("%s", usia);
+                total_manusia++;
+                printf("Total manusia = %d\n",total_manusia);
+               if(total_manusia>200){
+                       printf("Maaf, Total Manusia pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                   }
+                printf("Silahkan pilih Jenis Barang  anda!\n");
+                scanf("%s", Barang);
+                if(strcmp(Barang, "sepedamotor")==0){
+                    if(total_sepedaMotor<=40){
+                        total_sepedaMotor++;
+                        printf("Total sepedamotor = %d\n",total_sepedaMotor);
+                    }else if(total_sepedaMotor>40){
+                    printf("Maaf, Total Sepeda Motor pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(Barang, "mobil")==0){
+                    printf("Maaf, kapal ini tidak mengangkut Mobil\n");
+                    break;
+                }else if(strcmp(Barang, "---")==0){
+                    printf("Total Manusia = %d | Total Sepeda Motor = %d | Total Mobil = -\n", total_manusia, total_sepedaMotor);
+                    ongkos_tomok=(total_manusia*8000)+(total_sepedaMotor*5000);
+                    printf("Total Harga %d\n", ongkos_tomok);
+                    break;
+                }
+                // printf("Total Manusia = %d | Total Sepeda Motor = %d | Total Mobil = -\n", total_manusia, total_sepedaMotor);
+                // ongkos_tomok=(total_manusia*8000)+(total_sepedaMotor*5000);
+                // printf("Total Harga %d\n", ongkos_tomok);
+            }while(strcmp(Barang, "sepedamotor")==0 || strcmp(Barang, "mobil")==0 );
+            
+            }else if(strcmp(tujuan, "ambarita")==0){
+            printf("Untuk tujuan ke Ambarita, anda dapat menaiki jenis Kapal Ihan Batak\n");
+            do{
+                printf("Selamat Datang di Menu Registrasi!\n");
+                printf("Silahkan masukkan Nama Anda!\n");
+                scanf("%s", nama);
+                printf("Silahkan masukkan Jenis Kelamin Anda!\n");
+                scanf("%s", jenis_kelamin);
+                printf("Silahkan masukkan Usia Anda!\n");
+                scanf("%s", usia);
+                total_manusia++;
+                printf("Total manusia = %d\n",total_manusia);
+                if(total_manusia>250){
+                        printf("Maaf, Total Manusia pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                printf("Silahkan pilih Jenis Barang  anda!\n");
+                scanf("%s", Barang);    
+                if(strcmp(Barang, "sepedamotor")==0){
+                    if(total_sepedaMotor<=50){
+                        total_sepedaMotor++;
+                        printf("Total sepedamotor = %d\n",total_sepedaMotor);
+                    }else if(total_sepedaMotor>50){
+                        printf("Maaf, Total Sepeda Motor pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }   
+                }else if(strcmp(Barang, "mobil")==0){
+                    if(total_mobil<=30){
+                        total_mobil++;
+                        printf("Total mobil = %d\n",total_mobil);
+                    }else if(total_mobil>30){
+                        printf("Maaf, Total Mobil pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(Barang, "---")==0){
+                    printf("Total Manusia = %d | Total Sepeda Motor = %d | Total Mobil = %d\n", total_manusia, total_sepedaMotor, total_mobil);
+                    ongkos_ambarita=(total_manusia*8000)+(total_sepedaMotor*5000)+ (total_mobil*10000);
+                    printf("Total Harga %d\n", ongkos_ambarita);
+                    break;
+                }
+                
+            }while(strcmp(Barang, "sepedamotor")==0 || strcmp(Barang, "mobil")==0);
+            
+        }else if(strcmp(tujuan, "nainggolan")==0){
+            printf("Untuk tujuan ke Nainggolan, anda dapat menaiki jenis Ferry\n");
+            do{
+                printf("Selamat Datang di Menu Registrasi!\n");
+                printf("Silahkan masukkan Nama Anda!\n");
+                scanf("%s", nama);
+                printf("Silahkan masukkan Jenis Kelamin Anda!\n");
+                scanf("%s", jenis_kelamin);
+                printf("Silahkan masukkan Usia Anda!\n");
+                scanf("%s", usia);
+                total_manusia++;
+                printf("Total manusia = %d\n",total_manusia);
+                if(total_manusia>300){
+                        printf("Maaf, Total Manusia pada Kapal ini s udah mencapai jumlah maksimum!\n");
+                    }
+                printf("Silahkan pilih Jenis Barang  anda!\n");
+                scanf("%s", Barang);  
+                if(strcmp(Barang , "sepedamotor")==0){
+                    if(total_sepedaMotor<=150){
+                        total_sepedaMotor++;
+                        printf("Total sepedamotor = %d\n",total_sepedaMotor);
+                    }else if(total_sepedaMotor>150){
+                        printf("Maaf, Total Sepeda Motor pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(Barang, "mobil")==0){
+                    if(total_mobil<=60){
+                        total_mobil++;
+                        printf("Total mobil = %d\n",total_mobil);
+                    }else if(total_mobil>60){
+                        printf("Maaf, Total Mobil pada Kapal ini sudah mencapai jumlah maksimum!\n");
+                    }
+                }else if(strcmp(Barang, "---")==0){
+                    printf("Total Manusia = %d | Total Sepeda Motor = %d | Total Mobil = %d\n", total_manusia, total_sepedaMotor, total_mobil);
+                    ongkos_nainggolan=(total_manusia*8000)+(total_sepedaMotor*5000)+ (total_mobil*10000);
+                    printf("Total Harga %d\n", ongkos_nainggolan);
+                    break;
+
+                }
+
+            }while(strcmp(Barang, "sepedamotor")==0 || strcmp(Barang, "mobil")==0);
+
+    }
+    }
+
+    return 0;
+    }
